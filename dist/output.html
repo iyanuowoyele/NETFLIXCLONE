@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="./output.css" />
     <title>NETFLIX CLONE</title>
   </head>
-  <body>
-    <div class="relative min-h-screen">
+  <body class="bg-zinc-800">
+    <div class="min-h-screen">
       <video
-        class="absolute top-0 left-0 w-full h-full object-cover"
+        class="relative top-0 left-0 w-full h-full object-cover"
         autoplay
         muted
         loop
@@ -18,10 +18,12 @@
         <!-- Add other video sources for cross-browser compatibility (WebM, Ogg) -->
         Your browser does not support the video tag.
       </video>
+      <!-- <div
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-50 "
+      ></div> -->
       <div
-        class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
-      ></div>
-      <div class="absolute px-14 py-5 flex justify-between text-white w-full">
+        class="absolute top-0 px-14 py-5 flex justify-between text-white w-full"
+      >
         <div class="flex space-x-6 items-center">
           <div class="w-24 h-7">
             <img src="../images/netflixlogo.png" alt="" />
@@ -40,20 +42,52 @@
         <div class="flex space-x-5 items-center">
           <div class="flex space-x-5 items-center">
             <div class="w-5 h-5">
-              <img src="../images/searchicon.png" alt="" />
+              <img src="../images/icons8-search-30.png" alt="" />
             </div>
             <div><p>Children</p></div>
             <div class="w-5 h-5">
-              <img src="../images/notificationicon.png" alt="" />
+              <img src="../images/icons8-bell-24.png" alt="" />
             </div>
           </div>
           <div class="w-8 h-8 bg-blue-500 rounded-lg">
             <img src="../images/goku.png" alt="" />
           </div>
           <div class="w-3 h-3">
-            <img src="../images/arrowdownicon.png" alt="" />
+            <img src="../images/icons8-sort-down-50.png" alt="" />
           </div>
         </div>
+      </div>
+
+      <div class="absolute top-48 px-14 text-white font-rage">
+        <div class="flex space-x-3 items-center">
+          <div class="w-8 h-8"><img src="../images/n.png" alt="" /></div>
+          <div><p class="text-3xl font-bold">S E R I E S</p></div>
+        </div>
+        <div><p class="text-9xl font-medium py-1">ONE PIECE</p></div>
+        <div>
+          <p class="text-2xl">
+            A epic saga of adventure on the high seas,the original manga<br />
+            follows the adventures of Luffy,anenthusiastic young man with<br />
+            the singular aspiration of becoming “King of the Pirates.”
+          </p>
+        </div>
+      </div>
+      =================
+      <div class="absolute px-14 text-white bg-white">
+        <div class="flex rounded-lg">
+          <div class="w-6 h-6">
+            <img src="../images/play.png" alt="" />
+          </div>
+          <div>
+            <p class="text-black">Play</p>
+          </div>
+        </div>
+      </div>
+      -------------------------------------------------------------
+      <div></div>
+
+      <div>
+        <div></div>
       </div>
     </div>
   </body>
