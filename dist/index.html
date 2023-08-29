@@ -6,18 +6,18 @@
     <link rel="stylesheet" href="./output.css" />
     <title>NETFLIX CLONE</title>
   </head>
-  <body class="bg-zinc-800">
-    <div class="min-h-screen">
-      <video
+  <body class="bg-pink-300">
+    <div class="">
+      <!-- <video
         class="relative top-0 left-0 w-full h-full object-cover"
         autoplay
         muted
         loop
       >
         <source src="../videos/gear5.mp4" type="video/mp4" />
-        <!-- Add other video sources for cross-browser compatibility (WebM, Ogg) -->
-        Your browser does not support the video tag.
-      </video>
+        --Add other video sources for cross-browser compatibility (WebM, Ogg)
+        Your browser does not support the video tag.--
+      </video> -->
       <!-- <div
         class="absolute top-0 left-0 w-full h-full object-cover bg-black opacity-50  "
       ></div> -->
@@ -29,22 +29,34 @@
               <img src="../images/netflixlogo.png" alt="" />
             </div>
             <div>
-              <ul class="flex space-x-5 text-sm">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Series</a></li>
-                <li><a href="#">Films</a></li>
-                <li><a href="#">New & Popular</a></li>
-                <li><a href="#">My List</a></li>
-                <li><a href="#">Browse by Languages</a></li>
+              <ul class="flex text-sm sm:space-x-0 lg:space-x-5">
+                <li class="lg:block sm:hidden"><a href="#">Home</a></li>
+                <li class="lg:block sm:hidden"><a href="#">Series</a></li>
+                <li class="lg:block sm:hidden"><a href="#">Films</a></li>
+                <li class="lg:block sm:hidden">
+                  <a href="#">New & Popular</a>
+                </li>
+                <li class="lg:block sm:hidden"><a href="#">My List</a></li>
+                <li class="lg:block sm:hidden">
+                  <a href="#">Browse by Languages</a>
+                </li>
+                <li class="lg:hidden sm:block"><a href="#">Browse</a></li>
               </ul>
             </div>
           </div>
           <div class="flex space-x-5 items-center">
             <div class="flex space-x-5 items-center">
-              <div class="w-5 h-5">
-                <img src="../images/icons8-search-30.png" alt="" />
+              <div class="text-blue-800 items-center flex">
+                <div class="searchfield"></div>
+                <button class="js-buttonon" onclick=" displayon(); ">
+                  <img
+                    src="../images/icons8-search-30.png"
+                    alt=""
+                    class="h-6 w-6"
+                  />
+                </button>
               </div>
-              <div><p>Children</p></div>
+              <div class="sm:hidden lg:block"><p>Children</p></div>
               <div class="w-5 h-5">
                 <img src="../images/icons8-bell-24.png" alt="" />
               </div>
@@ -115,40 +127,9 @@
           </div>
         </div>
         <!-- -------------------------------------------------------------------- -->
-        <div class="ml-14 mt-36">
-          <div>
-            <p class="font-medium text-2xl text-white mb-4">New Releases</p>
-          </div>
+        <div class="mt-16 flex items-center justify-center">
           <div class="flex">
-            <div class="w-64 h-40 bg-green-500 rounded-md">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
+            <div class="w-64 h-40 bg-gray-500 rounded-md">
               <img
                 src="../images/deathnote.png"
                 alt=""
@@ -156,54 +137,31 @@
               />
             </div>
           </div>
-        </div>
-        <!-- ---------------------------------------------------------------------- -->
-        <div class="ml-14 mt-10">
-          <div>
-            <p class="font-medium text-2xl text-white mb-4">Made For Iyanu</p>
-          </div>
-          <div class="flex">
-            <div class="w-64 h-40 bg-green-500 rounded-md">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-            <div class="w-64 h-40 bg-green-500 rounded-md ml-2">
-              <img
-                src="../images/deathnote.png"
-                alt=""
-                class="object-contain w-full h-full"
-              />
-            </div>
-          </div>
-        </div>
         </div>
         <!-- ------------------------------------------------------------------------------ -->
       </div>
     </div>
+
+    <script>
+      const mybutton = document.querySelector(".js-buttonon");
+      const searchon = document.querySelector(".searchfield");
+
+      let isactive = true;
+
+      function displayon() {
+        if (isactive) {
+          searchon.innerHTML = `<input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search..."
+                  />`;
+          isactive = false;
+        } else {
+          searchon.innerHTML = `<div></div>`;
+          isactive = true;
+        }
+      }
+    </script>
   </body>
 </html>
 
